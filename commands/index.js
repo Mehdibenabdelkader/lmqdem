@@ -1,11 +1,12 @@
 // Command registry for Lm9adem bot
 import { handleChkonCommand } from './chkon.js';
+import { handleMchrou3atCommand } from './mchrou3at.js';
 
 // Command handlers mapping
 export const commandHandlers = {
   'chkon': handleChkonCommand,
+  'mchrou3at': handleMchrou3atCommand,
   // Future commands will be added here
-  // 'mchrou3at': handleMchrou3atCommand,
   // 'mchrou3': handleMchrou3Command,
   // 'sugg': handleSuggCommand,
   // 'tasks': handleTasksCommand,
