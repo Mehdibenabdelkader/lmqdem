@@ -1,0 +1,90 @@
+{
+  "projects": {
+    "design": {
+      "name": "Design Project",
+      "description": "UI/UX design for the new mobile app interface",
+      "manager": "Sarah",
+      "managerId": "123456789012345678",
+      "keywords": ["design", "ui", "ux", "interface", "mobile", "app"],
+      "channel": "#design-team",
+      "channelId": "987654321098765432",
+      "status": "active",
+      "tasks": [
+        {
+          "id": 1,
+          "description": "Create wireframes for main screens",
+          "due": "2024-01-15",
+          "status": "pending",
+          "assignedTo": "Sarah"
+        },
+        {
+          "id": 2,
+          "description": "Design color palette and typography",
+          "due": "2024-01-20",
+          "status": "in-progress",
+          "assignedTo": "Ahmed"
+        }
+      ],
+      "suggestions": []
+    },
+    "marketing": {
+      "name": "Marketing Campaign",
+      "description": "Social media marketing strategy and content creation",
+      "manager": "Youssef",
+      "managerId": "234567890123456789",
+      "keywords": ["marketing", "social", "media", "campaign", "content", "strategy"],
+      "channel": "#marketing-team",
+      "channelId": "876543210987654321",
+      "status": "active",
+      "tasks": [
+        {
+          "id": 1,
+          "description": "Create content calendar for Q1",
+          "due": "2024-01-10",
+          "status": "completed",
+          "assignedTo": "Youssef"
+        },
+        {
+          "id": 2,
+          "description": "Design social media templates",
+          "due": "2024-01-25",
+          "status": "pending",
+          "assignedTo": "Fatima"
+        }
+      ],
+      "suggestions": []
+    },
+    "development": {
+      "name": "Backend Development",
+      "description": "API development and database optimization",
+      "manager": "Omar",
+      "managerId": "345678901234567890",
+      "keywords": ["development", "backend", "api", "database", "code", "programming"],
+      "channel": "#dev-team",
+      "channelId": "765432109876543210",
+      "status": "active",
+      "tasks": [
+        {
+          "id": 1,
+          "description": "Implement user authentication API",
+          "due": "2024-01-30",
+          "status": "in-progress",
+          "assignedTo": "Omar"
+        },
+        {
+          "id": 2,
+          "description": "Optimize database queries",
+          "due": "2024-02-05",
+          "status": "pending",
+          "assignedTo": "Aicha"
+        }
+      ],
+      "suggestions": []
+    }
+  },
+  "settings": {
+    "managerRole": "Manager",
+    "botName": "Lm9adem",
+    "language": "darija"
+  }
+}
