@@ -9,7 +9,8 @@ import {
   verifyKeyMiddleware,
 } from 'discord-interactions';
 import { getRandomEmoji, DiscordRequest } from './utils.js';
-import { getShuffledOptions, getResult } from './game.js';
+import { getCommandHandler, commandExists } from './commands/index.js';
+import { generateDarijaResponse } from './utils/darija.js';
 
 // Create an express app
 const app = express();
@@ -41,62 +42,29 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
   if (type === InteractionType.APPLICATION_COMMAND) {
     const { name } = data;
 
-    // "test" command
-    if (name === 'test') {
-      // Send a message into the channel where command was triggered from
-      return res.send({
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
-          components: [
-            {
-              type: MessageComponentTypes.TEXT_DISPLAY,
-              // Fetches a random emoji to send from a helper function
-              content: `hello world ${getRandomEmoji()}`
-            }
-          ]
-        },
-      });
+    // Check if command exists in our handler registry
+    if (commandExists(name)) {
+      try {
+        const handler = getCommandHandler(name);
+        const response = handler(req.body);
+        return res.send(response);
+      } catch (error) {
+        console.error(`Error handling command ${name}:`, error);
+        return res.send({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: generateDarijaResponse('error', { message: 'Hada mashi mzyan, 3awed tjarreb!' })
+          }
+        });
+      }
     }
 
-    // "challenge" command
-    if (name === 'challenge' && id) {
-      // Interaction context
-      const context = req.body.context;
-      // User ID is in user field for (G)DMs, and member for servers
-      const userId = context === 0 ? req.body.member.user.id : req.body.user.id;
-      // User's object choice
-      const objectName = req.body.data.options[0].value;
-
-      // Create active game using message ID as the game ID
-      activeGames[id] = {
-        id: userId,
-        objectName,
-      };
-
+    // Legacy commands for backward compatibility
+    if (name === 'test') {
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          flags: InteractionResponseFlags.IS_COMPONENTS_V2,
-          components: [
-            {
-              type: MessageComponentTypes.TEXT_DISPLAY,
-              // Fetches a random emoji to send from a helper function
-              content: `Rock papers scissors challenge from <@${userId}>`,
-            },
-            {
-              type: MessageComponentTypes.ACTION_ROW,
-              components: [
-                {
-                  type: MessageComponentTypes.BUTTON,
-                  // Append the game ID to use later on
-                  custom_id: `accept_button_${req.body.id}`,
-                  label: 'Accept',
-                  style: ButtonStyleTypes.PRIMARY,
-                },
-              ],
-            },
-          ],
+          content: `Ahlan! Ana Lm9adem! ${getRandomEmoji()}`
         },
       });
     }

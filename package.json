@@ -1,8 +1,8 @@
 {
-  "name": "discord-getting-started",
+  "name": "lm9adem-discord-bot",
   "private": true,
   "version": "1.0.0",
-  "description": "Discord example app",
+  "description": "Lm9adem - A Discord bot for project management and team coordination",
   "main": "app.js",
   "type": "module",
   "engines": {
@@ -13,7 +13,7 @@
     "register": "node commands.js",
     "dev": "nodemon app.js"
   },
-  "author": "Shay DeWael",
+  "author": "Lm9adem Team",
   "license": "MIT",
   "dependencies": {
     "discord-interactions": "^4.0.0",

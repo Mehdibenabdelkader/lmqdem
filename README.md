@@ -1,108 +1,153 @@
-# Getting Started app for Discord
+# Lm9adem Discord Bot 🤖
 
-This project contains a basic rock-paper-scissors-style Discord app written in JavaScript, built for the [getting started guide](https://discord.com/developers/docs/getting-started).
+**Lm9adem** is a Discord bot inspired by the Moroccan concept of a local representative who helps people and points them to the right person. The bot helps manage projects and coordinate team members in your Discord server.
 
-![Demo of app](https://github.com/discord/discord-example-app/raw/main/assets/getting-started-demo.gif?raw=true)
+## 🌟 Features
 
-## Project structure
-Below is a basic overview of the project structure:
+### Phase 1 - Core Features
+- **`/chkon [topic]`** - Ask who is responsible for a specific topic or project
+- **`/mchrou3at`** - List all available projects with their managers
+- **`/mchrou3 [name]`** - Show detailed information about a specific project
+- **`/sugg [text]`** - Create suggestion tickets for discussion
+- **`/tasks`** - Manage project tasks (add, list, mark as done)
 
-```
-├── examples    -> short, feature-specific sample apps
-│   ├── app.js  -> finished app.js code
-│   ├── button.js
-│   ├── command.js
-│   ├── modal.js
-│   ├── selectMenu.js
-├── .env.sample -> sample .env file
-├── app.js      -> main entrypoint for app
-├── commands.js -> slash command payloads + helpers
-├── game.js     -> logic specific to RPS
-├── utils.js    -> utility functions and enums
-├── package.json
-├── README.md
-└── .gitignore
-```
+### Future Features
+- **`/dkker`** - Set reminders
+- **`/m3lomat`** - FAQ/guide system
+- Weekly project digest
 
-## Running app locally
-
-Before you start, you'll need to install [NodeJS](https://nodejs.org/en/download/) and [create a Discord app](https://discord.com/developers/applications) with the proper permissions:
-- `applications.commands`
-- `bot` (with Send Messages enabled)
-
-
-Configuring the app is covered in detail in the [getting started guide](https://discord.com/developers/docs/getting-started).
-
-### Setup project
-
-First clone the project:
-```
-git clone https://github.com/discord/discord-example-app.git
-```
-
-Then navigate to its directory and install dependencies:
-```
-cd discord-example-app
-npm install
-```
-### Get app credentials
-
-Fetch the credentials from your app's settings and add them to a `.env` file (see `.env.sample` for an example). You'll need your app ID (`APP_ID`), bot token (`DISCORD_TOKEN`), and public key (`PUBLIC_KEY`).
-
-Fetching credentials is covered in detail in the [getting started guide](https://discord.com/developers/docs/getting-started).
-
-> 🔑 Environment variables can be added to the `.env` file in Glitch or when developing locally, and in the Secrets tab in Replit (the lock icon on the left).
-
-### Install slash commands
-
-The commands for the example app are set up in `commands.js`. All of the commands in the `ALL_COMMANDS` array at the bottom of `commands.js` will be installed when you run the `register` command configured in `package.json`:
+## 🏗️ Project Structure
 
 ```
-npm run register
+discord-example-app/
+├── app.js                 # Main bot application
+├── commands.js           # Command registration
+├── commands/             # Modular command handlers
+│   ├── index.js         # Command registry
+│   └── chkon.js         # /chkon command implementation
+├── utils/               # Utility functions
+│   ├── darija.js        # Darija language utilities
+│   └── projects.js      # Project management utilities
+├── data/                # Data storage
+│   └── projects.json    # Projects database
+└── examples/            # Example implementations
 ```
 
-### Run the app
+## 🚀 Setup
 
-After your credentials are added, go ahead and run the app:
+### Prerequisites
+- Node.js 18.x or higher
+- Discord Application with bot token
+- Discord server with appropriate permissions
 
+### Installation
+
+1. **Clone and install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   Create a `.env` file in the root directory:
+   ```env
+   APP_ID=your_discord_app_id
+   PUBLIC_KEY=your_discord_public_key
+   BOT_TOKEN=your_discord_bot_token
+   PORT=3000
+   ```
+
+3. **Register commands:**
+   ```bash
+   npm run register
+   ```
+
+4. **Start the bot:**
+   ```bash
+   npm start
+   # or for development:
+   npm run dev
+   ```
+
+## 📝 Usage
+
+### Commands
+
+#### `/chkon [topic]`
+Ask who is responsible for a specific topic or project.
+
+**Example:**
 ```
-node app.js
+/chkon design
+```
+**Response:**
+```
+🔍 Chkon li kaydir "design"?
+
+📌 Design Project
+👤 Manager: @Sarah (Sarah)
+📝 Description: UI/UX design for the new mobile app interface
+💬 Channel: #design-team
+📊 Status: 🟢 Active
 ```
 
-> ⚙️ A package [like `nodemon`](https://github.com/remy/nodemon), which watches for local changes and restarts your app, may be helpful while locally developing.
+#### `/mchrou3at`
+List all available projects with their managers.
 
-If you aren't following the [getting started guide](https://discord.com/developers/docs/getting-started), you can move the contents of `examples/app.js` (the finished `app.js` file) to the top-level `app.js`.
+#### `/mchrou3 [name]`
+Show detailed information about a specific project.
 
-### Set up interactivity
+#### `/sugg [text]`
+Create a suggestion ticket for discussion.
 
-The project needs a public endpoint where Discord can send requests. To develop and test locally, you can use something like [`ngrok`](https://ngrok.com/) to tunnel HTTP traffic.
+#### `/tasks`
+Manage project tasks with subcommands:
+- `add` - Add a new task (managers only)
+- `list` - List tasks for current or specified project
+- `done` - Mark a task as completed (managers only)
 
-Install ngrok if you haven't already, then start listening on port `3000`:
+## 🔧 Configuration
 
-```
-ngrok http 3000
-```
+### Projects Data Structure
+Projects are stored in `data/projects.json`. Each project includes:
+- Name and description
+- Manager information
+- Keywords for search
+- Channel information
+- Tasks and suggestions
+- Status
 
-You should see your connection open:
+### Manager Permissions
+- Only users with the "Manager" role can add/close tasks
+- Manager permissions are checked by user ID
+- Anyone can suggest or ask `/chkon`
 
-```
-Tunnel Status                 online
-Version                       2.0/2.0
-Web Interface                 http://127.0.0.1:4040
-Forwarding                    https://1234-someurl.ngrok.io -> localhost:3000
+## 🌍 Localization
 
-Connections                  ttl     opn     rt1     rt5     p50     p90
-                              0       0       0.00    0.00    0.00    0.00
-```
+The bot uses **Darija** (Moroccan Arabic) for all commands and responses:
+- Commands are in Darija: `/chkon`, `/mchrou3at`, `/mchrou3`, `/sugg`, `/tasks`
+- Responses mix Darija and English for clarity
+- Friendly and concise communication style
 
-Copy the forwarding address that starts with `https`, in this case `https://1234-someurl.ngrok.io`, then go to your [app's settings](https://discord.com/developers/applications).
+## 🔮 Future Development
 
-On the **General Information** tab, there will be an **Interactions Endpoint URL**. Paste your ngrok address there, and append `/interactions` to it (`https://1234-someurl.ngrok.io/interactions` in the example).
+The modular structure makes it easy to add new features:
+1. Create new command files in `commands/`
+2. Register commands in `commands/index.js`
+3. Add command definitions in `commands.js`
+4. Update project data structure as needed
 
-Click **Save Changes**, and your app should be ready to run 🚀
+## 📄 License
 
-## Other resources
-- Read **[the documentation](https://discord.com/developers/docs/intro)** for in-depth information about API features.
-- Browse the `examples/` folder in this project for smaller, feature-specific code examples
-- Join the **[Discord Developers server](https://discord.gg/discord-developers)** to ask questions about the API, attend events hosted by the Discord API team, and interact with other devs.
-- Check out **[community resources](https://discord.com/developers/docs/topics/community-resources#community-resources)** for language-specific tools maintained by community members.
+MIT License - see LICENSE file for details.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+---
+
+**Lm9adem** - Helping you find the right person for the right job! 🎯
