@@ -19,16 +19,16 @@ const CHKON_COMMAND = {
 };
 
 // Future commands (commented out for now)
-const MCHROU3AT_COMMAND = {
-  name: 'mchrou3at',
+const LMACHARI3_COMMAND = {
+  name: 'lmachari3',
   description: 'List all available projects with their managers',
   type: 1,
   integration_types: [0, 1],
   contexts: [0, 1, 2],
 };
 
-const MCHROU3_COMMAND = {
-  name: 'mchrou3',
+const KIFACH_COMMAND = {
+  name: 'kifach',
   description: 'Show details of a specific project',
   options: [
     {
@@ -43,14 +43,14 @@ const MCHROU3_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const SUGG_COMMAND = {
-  name: 'sugg',
-  description: 'Create a suggestion ticket for discussion',
+const CHBANLIK_COMMAND = {
+  name: 'chbanlik',
+  description: 'Suggest a task or idea for discussion',
   options: [
     {
       type: 3,
-      name: 'text',
-      description: 'Your suggestion or idea',
+      name: 'task',
+      description: 'The task or idea you want to suggest',
       required: true,
     },
   ],
@@ -129,9 +129,9 @@ const TASKS_COMMAND = {
 // Register all commands
 const ALL_COMMANDS = [
   CHKON_COMMAND,
-  MCHROU3AT_COMMAND,
-  MCHROU3_COMMAND,
-  SUGG_COMMAND,
+  LMACHARI3_COMMAND,
+  KIFACH_COMMAND,
+  CHBANLIK_COMMAND,
   TASKS_COMMAND
 ];
 

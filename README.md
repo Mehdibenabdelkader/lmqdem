@@ -6,9 +6,9 @@
 
 ### Phase 1 - Core Features
 - **`/chkon [topic]`** - Ask who is responsible for a specific topic or project
-- **`/mchrou3at`** - List all available projects with their managers
-- **`/mchrou3 [name]`** - Show detailed information about a specific project
-- **`/sugg [text]`** - Create suggestion tickets for discussion
+- **`/lmachari3`** - List all available projects with their managers
+- **`/kifach [name]`** - Show detailed information about a specific project
+- **`/chbanlik [task]`** - Suggest a task or idea for discussion
 - **`/tasks`** - Manage project tasks (add, list, mark as done)
 
 ### Future Features
@@ -90,14 +90,14 @@ Ask who is responsible for a specific topic or project.
 📊 Status: 🟢 Active
 ```
 
-#### `/mchrou3at`
+#### `/lmachari3`
 List all available projects with their managers.
 
-#### `/mchrou3 [name]`
+#### `/kifach [name]`
 Show detailed information about a specific project.
 
-#### `/sugg [text]`
-Create a suggestion ticket for discussion.
+#### `/chbanlik [task]`
+Suggest a task or idea for discussion. The suggestion will be posted to the suggestions channel.
 
 #### `/tasks`
 Manage project tasks with subcommands:
@@ -124,7 +124,7 @@ Projects are stored in `data/projects.json`. Each project includes:
 ## 🌍 Localization
 
 The bot uses **Darija** (Moroccan Arabic) for all commands and responses:
-- Commands are in Darija: `/chkon`, `/mchrou3at`, `/mchrou3`, `/sugg`, `/tasks`
+- Commands are in Darija: `/chkon`, `/lmachari3`, `/kifach`, `/chbanlik`, `/tasks`
 - Responses mix Darija and English for clarity
 - Friendly and concise communication style
 

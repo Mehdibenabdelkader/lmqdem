@@ -2,14 +2,14 @@
 
 // Common Darija phrases and responses
 export const DARIJA_PHRASES = {
-  WELCOME: "Ahlan! Ana Lm9adem, n3awn fik f l-mchrou3at dyalna! 🎉",
+  WELCOME: "Ahlan! Ana Lm9adem, n3awn fik f l-lmachari3 dyalna! 🎉",
   ERROR: "Oups! Hada mashi mzyan, 3awed tjarreb. 😅",
   NO_PERMISSION: "Ma 3andkch l-permission bach tdir hadi. Khassak tkun manager! 🚫",
-  PROJECT_NOT_FOUND: "Ma lqitach had l-mchrou3. Checki l-mchrou3at li kaynin! 🔍",
+  PROJECT_NOT_FOUND: "Ma lqitach had l-mchrou3. Checki l-lmachari3 li kaynin! 🔍",
   SUCCESS: "Mzyan! Dert hadi b success! ✅",
   LOADING: "Khassni nchecki... ⏳",
   THANKS: "Baraka lla fik! 🙏",
-  HELP: "Ana Lm9adem! N3awn fik f l-mchrou3at. Dir /mchrou3at bach tshuf kullchi! 🤖"
+  HELP: "Ana Lm9adem! N3awn fik f l-lmachari3. Dir /lmachari3 bach tshuf kullchi! 🤖"
 };
 
 // Generate friendly Darija responses

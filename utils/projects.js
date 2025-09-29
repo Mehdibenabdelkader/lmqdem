@@ -61,6 +61,20 @@ export function findProjectByKeyword(keyword) {
   return null;
 }
 
+// Find project by exact name (used by kifach command)
+export function findProjectByName(name) {
+  const projects = getAllProjects();
+  const searchName = name.toLowerCase();
+  
+  for (const [projectKey, project] of Object.entries(projects)) {
+    if (project.name.toLowerCase() === searchName) {
+      return project;
+    }
+  }
+  
+  return null;
+}
+
 // Check if user is a manager
 export function isUserManager(userId, projectKey = null) {
   const data = loadProjects();
