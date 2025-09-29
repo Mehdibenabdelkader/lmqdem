@@ -15,16 +15,11 @@ function generateLmachari3Response(projects) {
     const channelMention = `<#${project.channelId}>`;
     const statusEmoji = formatProjectStatus(project.status);
     
-    response += `**${projectCount}.** 📋 **${project.name}**\n`;
-    response += `   👤 Manager: ${managerMention} (${project.manager})\n`;
-    response += `   💬 Channel: ${channelMention}\n`;
-    response += `   📊 Status: ${statusEmoji}\n`;
-    response += `   📝 ${project.description}\n\n`;
-    
+    response += `**${projectCount}.** **${project.name}**\n`;
     projectCount++;
   }
   
-  response += `💡 **Tip:** Dir \`/chkon [topic]\` bach tshuf chkon li kaydir chi haja specific!`;
+  response += `💡 **Tip:** Dir \`/chkon [project]\` bach tshuf chkon li kaydir chi haja specific!`;
   
   return response;
 }

@@ -2,14 +2,14 @@
 
 // Common Darija phrases and responses
 export const DARIJA_PHRASES = {
-  WELCOME: "Ahlan! Ana Lm9adem, n3awn fik f l-lmachari3 dyalna! 🎉",
-  ERROR: "Oups! Hada mashi mzyan, 3awed tjarreb. 😅",
-  NO_PERMISSION: "Ma 3andkch l-permission bach tdir hadi. Khassak tkun manager! 🚫",
-  PROJECT_NOT_FOUND: "Ma lqitach had l-mchrou3. Checki l-lmachari3 li kaynin! 🔍",
-  SUCCESS: "Mzyan! Dert hadi b success! ✅",
-  LOADING: "Khassni nchecki... ⏳",
-  THANKS: "Baraka lla fik! 🙏",
-  HELP: "Ana Lm9adem! N3awn fik f l-lmachari3. Dir /lmachari3 bach tshuf kullchi! 🤖"
+  WELCOME: "Ahlan! m3ak Lmqdem, ach 7eb lkhater",
+  ERROR: "chi haja machi tal lhih, 3awd jereb",
+  NO_PERMISSION: "Ma 3andkch lpermission bach tdir hadi. Khassk tkun manager",
+  PROJECT_NOT_FOUND: "Ma lqitch had lmchrou3. Checki lmachari3 li kaynin! (/lmachari3) ",
+  SUCCESS: "Nadi canadi",
+  LOADING: "daqiqa... ⏳",
+  THANKS: "Lah y7fdek",
+  HELP: "m3ak Lmqdem! kayn man9diw? Dir /lmachari3 bach tshuf kulchi!"
 };
 
 // Generate friendly Darija responses
@@ -40,7 +40,7 @@ export function generateDarijaResponse(type, context = {}) {
       return DARIJA_PHRASES.HELP;
     
     default:
-      return "Ma fhemtch hadi. 3awed tjarreb! 🤔";
+      return "Had nwita mafhmthach. 3awd jereb";
   }
 }
 

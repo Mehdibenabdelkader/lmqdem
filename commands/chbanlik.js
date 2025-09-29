@@ -6,18 +6,7 @@ import { DiscordRequest } from '../utils.js';
 function generateChbanlikResponse(task, channelId) {
   const channelMention = `<#${channelId}>`;
   
-  return `💡 **Chbanlik hadi:**\n\n` +
-         `📝 **Task/Idea:** ${task}\n` +
-         `📢 **Posted in:** ${channelMention}\n` +
-         `⏰ **Time:** ${new Date().toLocaleString('en-US', { 
-           timeZone: 'Africa/Casablanca',
-           year: 'numeric',
-           month: 'long',
-           day: 'numeric',
-           hour: '2-digit',
-           minute: '2-digit'
-         })}\n\n` +
-         `✅ **Suggestion posted successfully!** Check the suggestions channel for discussion.`;
+  return `✅ **safi sir tan3iyto lik** Check the suggestions channel for discussion.`;
 }
 
 // Add suggestion to projects data
@@ -50,18 +39,8 @@ function generateSuggestionMessage(task, user) {
   const userMention = `<@${user.id}>`;
   const username = user.username || 'Unknown User';
   
-  return `💡 **New Suggestion from ${username}**\n\n` +
-         `📝 **Task/Idea:** ${task}\n` +
-         `👤 **Suggested by:** ${userMention}\n` +
-         `⏰ **Time:** ${new Date().toLocaleString('en-US', { 
-           timeZone: 'Africa/Casablanca',
-           year: 'numeric',
-           month: 'long',
-           day: 'numeric',
-           hour: '2-digit',
-           minute: '2-digit'
-         })}\n\n` +
-         `💬 **Discussion:** React with 👍 to support or 💬 to discuss!`;
+  return `💡 **New Suggestion from ${userMention}**\n\n` +
+         `📝 **Task/Idea:** ${task}\n`;
 }
 
 // Post message to suggestions channel
@@ -92,7 +71,7 @@ export async function handleChbanlikCommand(interaction) {
     return {
       type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
       data: {
-        content: "❌ Khassak tdir task! Usage: `/chbanlik [task]`"
+        content: "kmelia lcommand `/chbanlik [task]`"
       }
     };
   }
@@ -109,7 +88,7 @@ export async function handleChbanlikCommand(interaction) {
     return {
       type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
       data: {
-        content: "❌ Ma dert walou! Error f saving suggestion. 3awed tjarreb!"
+        content: "Hda elia, Error f saving suggestion. 3awed jreb!"
       }
     };
   }
@@ -127,7 +106,7 @@ export async function handleChbanlikCommand(interaction) {
       return {
         type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
         data: {
-          content: "❌ Ma dert walou! Error f posting to suggestions channel. Checki l-channel ID!"
+          content: "Hda elia, Error f posting to suggestions channel. Checki channel ID!"
         }
       };
     }

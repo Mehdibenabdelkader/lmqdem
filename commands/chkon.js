@@ -4,18 +4,17 @@ import { formatProjectStatus } from '../utils/darija.js';
 // Generate Darija response
 function generateChkonResponse(project, keyword) {
   if (!project) {
-    return `🤷‍♂️ Ma 3reftch chkon li kaydir "${keyword}". Khassak tchecki lmachari3 li kaynin b /lmachari3.`;
+    return `Hda elia, ma3rftch chkon kheddam ela "${keyword}". tchecki elayach kheddamin b /lmachari3.`;
   }
   
   const managerMention = `<@${project.managerId}>`;
   const channelMention = `<#${project.channelId}>`;
   
-  return `🔍 **Chkon li kaydir "${keyword}"?**\n\n` +
+  return `🔍 **Chkon li kheddam ela "${keyword}"?**\n\n` +
          `📌 **${project.name}**\n` +
-         `👤 Manager: ${managerMention} (${project.manager})\n` +
+         `👤 mol chi: ${managerMention} (${project.manager})\n` +
          `📝 Description: ${project.description}\n` +
-         `💬 Channel: ${channelMention}\n` +
-         `📊 Status: ${formatProjectStatus(project.status)}`;
+         `💬 Channel: ${channelMention}\n`;
 }
 
 // Main command handler
@@ -26,7 +25,7 @@ export async function handleChkonCommand(interaction) {
     return {
       type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
       data: {
-        content: "❌ Khassak tdir keyword! Usage: `/chkon [topic]`"
+        content: "❌ dir chi projet Usage: `/chkon [topic]`"
       }
     };
   }

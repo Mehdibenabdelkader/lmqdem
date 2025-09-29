@@ -4,16 +4,15 @@ import { formatProjectStatus } from '../utils/darija.js';
 // Generate Darija response for project details
 function generateKifachResponse(project, projectName) {
   if (!project) {
-    return `🤷‍♂️ Ma lqitach had l-mchrou3 "${projectName}". Khassak tchecki lmachari3 li kaynin b /lmachari3.`;
+    return `Ma lqitch had lmchrou3 "${projectName}". chof elayach kheddamin /lmachari3.`;
   }
   
   const managerMention = `<@${project.managerId}>`;
   const channelMention = `<#${project.channelId}>`;
   const statusEmoji = formatProjectStatus(project.status);
   
-  let response = `📋 **Kifach "${projectName}"?**\n\n`;
-  response += `📌 **${project.name}**\n`;
-  response += `👤 Manager: ${managerMention} (${project.manager})\n`;
+  let response = `📌 **${project.name}**\n`;
+  response += `👤 mol chi: ${managerMention} (${project.manager})\n`;
   response += `📝 Description: ${project.description}\n`;
   response += `💬 Channel: ${channelMention}\n`;
   response += `📊 Status: ${statusEmoji}\n`;
@@ -55,7 +54,7 @@ export async function handleKifachCommand(interaction) {
     return {
       type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
       data: {
-        content: "❌ Khassak tdir project name! Usage: `/kifach [project name]`"
+        content: "zid smiya dlprojet! Usage: `/kifach [project name]`"
       }
     };
   }
