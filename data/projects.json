@@ -5,7 +5,14 @@
       "description": "UI/UX design for the new mobile app interface",
       "manager": "Sarah",
       "managerId": "123456789012345678",
-      "keywords": ["design", "ui", "ux", "interface", "mobile", "app"],
+      "keywords": [
+        "design",
+        "ui",
+        "ux",
+        "interface",
+        "mobile",
+        "app"
+      ],
       "channel": "#design-team",
       "channelId": "987654321098765432",
       "status": "active",
@@ -32,7 +39,14 @@
       "description": "Social media marketing strategy and content creation",
       "manager": "Youssef",
       "managerId": "234567890123456789",
-      "keywords": ["marketing", "social", "media", "campaign", "content", "strategy"],
+      "keywords": [
+        "marketing",
+        "social",
+        "media",
+        "campaign",
+        "content",
+        "strategy"
+      ],
       "channel": "#marketing-team",
       "channelId": "876543210987654321",
       "status": "active",
@@ -59,7 +73,14 @@
       "description": "API development and database optimization",
       "manager": "Omar",
       "managerId": "345678901234567890",
-      "keywords": ["development", "backend", "api", "database", "code", "programming"],
+      "keywords": [
+        "development",
+        "backend",
+        "api",
+        "database",
+        "code",
+        "programming"
+      ],
       "channel": "#dev-team",
       "channelId": "765432109876543210",
       "status": "active",
@@ -85,6 +106,25 @@
   "settings": {
     "managerRole": "Manager",
     "botName": "Lm9adem",
-    "language": "darija"
-  }
+    "language": "darija",
+    "suggestionsChannelId": "1422147093711028305"
+  },
+  "suggestions": [
+    {
+      "id": 1759136742924,
+      "text": "ndiro podcast",
+      "suggestedBy": "_fluka",
+      "suggestedById": "426489741199015956",
+      "status": "pending",
+      "createdAt": "2025-09-29T09:05:42.924Z"
+    },
+    {
+      "id": 1759136904987,
+      "text": "nsaybo game",
+      "suggestedBy": "_fluka",
+      "suggestedById": "426489741199015956",
+      "status": "pending",
+      "createdAt": "2025-09-29T09:08:24.987Z"
+    }
+  ]
 }
