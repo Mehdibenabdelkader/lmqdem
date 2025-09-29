@@ -4,7 +4,7 @@ import { formatProjectStatus } from '../utils/darija.js';
 // Generate Darija response
 function generateChkonResponse(project, keyword) {
   if (!project) {
-    return `🤷‍♂️ Ma 3reftch chkon li kaydir "${keyword}". Khassak tchecki l-mchrou3at li kaynin b /mchrou3at.`;
+    return `🤷‍♂️ Ma 3reftch chkon li kaydir "${keyword}". Khassak tchecki lmachari3 li kaynin b /lmachari3.`;
   }
   
   const managerMention = `<@${project.managerId}>`;
@@ -19,7 +19,7 @@ function generateChkonResponse(project, keyword) {
 }
 
 // Main command handler
-export function handleChkonCommand(interaction) {
+export async function handleChkonCommand(interaction) {
   const keyword = interaction.data.options?.[0]?.value;
   
   if (!keyword) {

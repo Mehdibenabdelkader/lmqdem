@@ -46,7 +46,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
     if (commandExists(name)) {
       try {
         const handler = getCommandHandler(name);
-        const response = handler(req.body);
+        const response = await handler(req.body);
         return res.send(response);
       } catch (error) {
         console.error(`Error handling command ${name}:`, error);

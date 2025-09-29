@@ -2,12 +2,12 @@ import { getAllProjects } from '../utils/projects.js';
 import { formatProjectStatus } from '../utils/darija.js';
 
 // Generate Darija response for listing all projects
-function generateMchrou3atResponse(projects) {
+function generateLmachari3Response(projects) {
   if (Object.keys(projects).length === 0) {
-    return `📌 **Lmchrou3at li kaynin daba:**\n\n❌ Ma kaynin walou mchrou3at daba. Khassna nzido chi haja!`;
+    return `📌 **Lmachari3 li kaynin daba:**\n\n❌ Ma kaynin walou lmachari3 daba. Khassna nzido chi haja!`;
   }
 
-  let response = `📌 **Lmchrou3at li kaynin daba:**\n\n`;
+  let response = `📌 **Lmachari3 li kaynin daba:**\n\n`;
   
   let projectCount = 1;
   for (const [projectKey, project] of Object.entries(projects)) {
@@ -30,9 +30,9 @@ function generateMchrou3atResponse(projects) {
 }
 
 // Main command handler
-export function handleMchrou3atCommand(interaction) {
+export async function handleLmachari3Command(interaction) {
   const projects = getAllProjects();
-  const response = generateMchrou3atResponse(projects);
+  const response = generateLmachari3Response(projects);
   
   return {
     type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
