@@ -53,10 +53,33 @@
       "channelId": "765432109876543210",
       "status": "active",
       "suggestions": []
+    },
+    "demyati": {
+      "name": "Demyati",
+      "description": "Video game",
+      "manager": "<@426489741199015956>",
+      "managerId": "426489741199015956",
+      "keywords": [],
+      "channel": "",
+      "channelId": "",
+      "status": "active",
+      "suggestions": []
+    },
+    "simatch": {
+      "name": "simatch",
+      "description": "",
+      "manager": "_fluka",
+      "managerId": "426489741199015956",
+      "keywords": [],
+      "channel": "",
+      "channelId": "",
+      "status": "active",
+      "suggestions": []
     }
   },
   "settings": {
     "managerRole": "Manager",
+    "managerRoleId": "1422571804832301137",
     "botName": "lmqdem",
     "language": "darija",
     "suggestionsChannelId": "1422147093711028305"

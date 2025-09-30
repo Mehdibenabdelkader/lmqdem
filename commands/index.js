@@ -4,6 +4,7 @@ import { handleLmachari3Command } from './lmachari3.js';
 import { handleKifachCommand } from './kifach.js';
 import { handleChbanlikCommand } from './chbanlik.js';
 import { handleChkon7naCommand } from './chkon7na.js';
+import { handleAddProjectCommand } from './add-project.js';
 
 // Command handlers mapping
 export const commandHandlers = {
@@ -12,6 +13,7 @@ export const commandHandlers = {
   'kifach': handleKifachCommand,
   'chbanlik': handleChbanlikCommand,
   'chkon7na': handleChkon7naCommand,
+  'add-project': handleAddProjectCommand,
   // Future commands will be added here
 };
 
