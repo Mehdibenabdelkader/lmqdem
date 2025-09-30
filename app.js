@@ -53,7 +53,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
         return res.send({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            content: generateDarijaResponse('error', { message: 'Hada mashi mzyan, 3awed tjarreb!' })
+            content: generateDarijaResponse('error', { message: 'chi haja machi tal lhih, 3awd jereb!' })
           }
         });
       }
@@ -64,7 +64,7 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async fun
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `Ahlan! Ana Lm9adem! ${getRandomEmoji()}`
+          content: `Ahlan! Ana Lm9dem! ${getRandomEmoji()}`
         },
       });
     }

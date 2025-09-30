@@ -59,6 +59,14 @@ const CHBANLIK_COMMAND = {
   contexts: [0, 1, 2],
 };
 
+const CHKON7NA_COMMAND = {
+  name: 'chkon7na',
+  description: 'Get a brief description of the community and available commands',
+  type: 1,
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
 const TASKS_COMMAND = {
   name: 'tasks',
   description: 'Manage tasks for projects',
@@ -132,6 +140,7 @@ const ALL_COMMANDS = [
   LMACHARI3_COMMAND,
   KIFACH_COMMAND,
   CHBANLIK_COMMAND,
+  CHKON7NA_COMMAND,
   TASKS_COMMAND
 ];
 
