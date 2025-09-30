@@ -51,7 +51,7 @@ Edit `data/projects.json` to add your own projects:
 
 ## Next Steps
 
-- Implement the remaining commands (`/lmachari3`, `/kifach`, `/chbanlik`, `/tasks`)
+- Implement the remaining commands (`/lmachari3`, `/kifach`, `/chbanlik`)
 - Add more projects to the database
 - Customize the Darija responses
 - Add your own features!

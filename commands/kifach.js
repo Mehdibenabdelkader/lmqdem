@@ -17,18 +17,6 @@ function generateKifachResponse(project, projectName) {
   response += `Channel: ${channelMention}\n`;
   response += `Status: ${statusEmoji}\n`;
   
-  // Add tasks if any
-  if (project.tasks && project.tasks.length > 0) {
-    response += `\n**Tasks (${project.tasks.length}):**\n`;
-    project.tasks.slice(0, 5).forEach((task, index) => {
-      const taskStatus = task.status === 'completed' ? '[DONE]' : 
-                       task.status === 'in-progress' ? '[IN PROGRESS]' : '[PENDING]';
-      response += `   ${index + 1}. ${taskStatus} ${task.description}\n`;
-    });
-    if (project.tasks.length > 5) {
-      response += `   ... and ${project.tasks.length - 5} more tasks\n`;
-    }
-  }
   
   // Add suggestions if any
   if (project.suggestions && project.suggestions.length > 0) {

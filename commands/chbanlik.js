@@ -3,20 +3,20 @@ import { generateDarijaResponse } from '../utils/darija.js';
 import { DiscordRequest } from '../utils.js';
 
 // Generate Darija response for suggestion posting
-function generateChbanlikResponse(task, channelId) {
+function generateChbanlikResponse(idea, channelId) {
   const channelMention = `<#${channelId}>`;
   
   return `**safi sir tan3iyto lik** Check the suggestions channel for discussion.`;
 }
 
 // Add suggestion to projects data
-function addSuggestionToData(task, userId, username) {
+function addSuggestionToData(idea, userId, username) {
   const data = loadProjects();
   
   // Create suggestion object
   const suggestion = {
     id: Date.now(), // Simple ID generation
-    text: task,
+    text: idea,
     suggestedBy: username,
     suggestedById: userId,
     status: 'pending',
@@ -35,18 +35,18 @@ function addSuggestionToData(task, userId, username) {
 }
 
 // Generate the message to post in the suggestions channel
-function generateSuggestionMessage(task, user) {
+function generateSuggestionMessage(idea, user) {
   const userMention = `<@${user.id}>`;
   const username = user.username || 'Unknown User';
   
   return `**New Suggestion from ${userMention}**\n\n` +
-         `**Task/Idea:** ${task}\n`;
+         `**Idea:** ${idea}\n`;
 }
 
 // Post message to suggestions channel
-async function postToSuggestionsChannel(task, user, suggestionsChannelId) {
+async function postToSuggestionsChannel(idea, user, suggestionsChannelId) {
   try {
-    const message = generateSuggestionMessage(task, user);
+    const message = generateSuggestionMessage(idea, user);
     const endpoint = `channels/${suggestionsChannelId}/messages`;
     
     await DiscordRequest(endpoint, {
@@ -65,13 +65,13 @@ async function postToSuggestionsChannel(task, user, suggestionsChannelId) {
 
 // Main command handler
 export async function handleChbanlikCommand(interaction) {
-  const task = interaction.data.options?.[0]?.value;
+  const idea = interaction.data.options?.[0]?.value;
   
-  if (!task) {
+  if (!idea) {
     return {
       type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
       data: {
-        content: "kmelia lcommand `/chbanlik [task]`"
+        content: "kmelia lcommand `/chbanlik [idea]`"
       }
     };
   }
@@ -82,7 +82,7 @@ export async function handleChbanlikCommand(interaction) {
   const username = user.username || 'Unknown User';
   
   // Add suggestion to data
-  const success = addSuggestionToData(task, userId, username);
+  const success = addSuggestionToData(idea, userId, username);
   
   if (!success) {
     return {
@@ -100,7 +100,7 @@ export async function handleChbanlikCommand(interaction) {
   
   // Post to suggestions channel if configured
   if (suggestionsChannelId && suggestionsChannelId !== '111111111111111111') {
-    const posted = await postToSuggestionsChannel(task, user, suggestionsChannelId);
+    const posted = await postToSuggestionsChannel(idea, user, suggestionsChannelId);
     
     if (!posted) {
       return {
@@ -113,7 +113,7 @@ export async function handleChbanlikCommand(interaction) {
   }
   
   // Generate response for the user
-  const userResponse = generateChbanlikResponse(task, suggestionsChannelId || 'general');
+  const userResponse = generateChbanlikResponse(idea, suggestionsChannelId || 'general');
   
   return {
     type: 4, // CHANNEL_MESSAGE_WITH_SOURCE

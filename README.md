@@ -8,8 +8,7 @@
 - **`/chkon [topic]`** - Ask who is responsible for a specific topic or project
 - **`/lmachari3`** - List all available projects with their managers
 - **`/kifach [name]`** - Show detailed information about a specific project
-- **`/chbanlik [task]`** - Suggest a task or idea for discussion
-- **`/tasks`** - Manage project tasks (add, list, mark as done)
+- **`/chbanlik [idea]`** - Suggest an idea for discussion
 
 ### Future Features
 - **`/dkker`** - Set reminders
@@ -100,17 +99,11 @@ List all available projects with their managers.
 #### `/kifach [name]`
 Show detailed information about a specific project.
 
-#### `/chbanlik [task]`
-Suggest a task or idea for discussion. The suggestion will be posted to the suggestions channel.
+#### `/chbanlik [idea]`
+Suggest an idea for discussion. The suggestion will be posted to the suggestions channel.
 
 #### `/chkon7na`
 Get a brief description of the community and available commands.
-
-#### `/tasks`
-Manage project tasks with subcommands:
-- `add` - Add a new task (managers only)
-- `list` - List tasks for current or specified project
-- `done` - Mark a task as completed (managers only)
 
 ## Configuration
 
@@ -120,18 +113,17 @@ Projects are stored in `data/projects.json`. Each project includes:
 - Manager information
 - Keywords for search
 - Channel information
-- Tasks and suggestions
+- Suggestions
 - Status
 
 ### Manager Permissions
-- Only users with the "Manager" role can add/close tasks
 - Manager permissions are checked by user ID
 - Anyone can suggest or ask `/chkon`
 
 ## Localization
 
 The bot uses **Darija** (Moroccan Arabic) for all commands and responses:
-- Commands are in Darija: `/chkon`, `/lmachari3`, `/kifach`, `/chbanlik`, `/chkon7na`, `/tasks`
+- Commands are in Darija: `/chkon`, `/lmachari3`, `/kifach`, `/chbanlik`, `/chkon7na`
 - Responses mix Darija and English for clarity
 - Friendly and concise communication style
 

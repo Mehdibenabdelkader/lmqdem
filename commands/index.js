@@ -13,7 +13,6 @@ export const commandHandlers = {
   'chbanlik': handleChbanlikCommand,
   'chkon7na': handleChkon7naCommand,
   // Future commands will be added here
-  // 'tasks': handleTasksCommand,
 };
 
 // Get command handler by name

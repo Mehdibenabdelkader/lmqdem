@@ -45,12 +45,12 @@ const KIFACH_COMMAND = {
 
 const CHBANLIK_COMMAND = {
   name: 'chbanlik',
-  description: 'Suggest a task or idea for discussion',
+  description: 'Suggest an idea for discussion',
   options: [
     {
       type: 3,
-      name: 'task',
-      description: 'The task or idea you want to suggest',
+      name: 'idea',
+      description: 'The idea you want to suggest',
       required: true,
     },
   ],
@@ -67,72 +67,6 @@ const CHKON7NA_COMMAND = {
   contexts: [0, 1, 2],
 };
 
-const TASKS_COMMAND = {
-  name: 'tasks',
-  description: 'Manage tasks for projects',
-  options: [
-    {
-      type: 1, // SUB_COMMAND
-      name: 'add',
-      description: 'Add a new task (managers only)',
-      options: [
-        {
-          type: 3,
-          name: 'description',
-          description: 'Task description',
-          required: true,
-        },
-        {
-          type: 3,
-          name: 'due',
-          description: 'Due date (YYYY-MM-DD)',
-          required: false,
-        },
-        {
-          type: 3,
-          name: 'project',
-          description: 'Project name',
-          required: false,
-        },
-      ],
-    },
-    {
-      type: 1, // SUB_COMMAND
-      name: 'list',
-      description: 'List tasks for current or specified project',
-      options: [
-        {
-          type: 3,
-          name: 'project',
-          description: 'Project name (optional)',
-          required: false,
-        },
-      ],
-    },
-    {
-      type: 1, // SUB_COMMAND
-      name: 'done',
-      description: 'Mark a task as completed (managers only)',
-      options: [
-        {
-          type: 4,
-          name: 'id',
-          description: 'Task ID to mark as done',
-          required: true,
-        },
-        {
-          type: 3,
-          name: 'project',
-          description: 'Project name (optional)',
-          required: false,
-        },
-      ],
-    },
-  ],
-  type: 1,
-  integration_types: [0, 1],
-  contexts: [0, 1, 2],
-};
 
 // Register all commands
 const ALL_COMMANDS = [
@@ -140,8 +74,7 @@ const ALL_COMMANDS = [
   LMACHARI3_COMMAND,
   KIFACH_COMMAND,
   CHBANLIK_COMMAND,
-  CHKON7NA_COMMAND,
-  TASKS_COMMAND
+  CHKON7NA_COMMAND
 ];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

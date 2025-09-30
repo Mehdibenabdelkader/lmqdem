@@ -111,7 +111,6 @@ export function addProject(projectData) {
   
   data.projects[projectKey] = {
     ...projectData,
-    tasks: [],
     suggestions: [],
     status: 'active'
   };
@@ -147,43 +146,6 @@ export function deleteProject(projectKey) {
   return saveProjects(data);
 }
 
-// Add task to project
-export function addTaskToProject(projectKey, taskData) {
-  const data = loadProjects();
-  const project = data.projects[projectKey];
-  
-  if (!project) {
-    return false;
-  }
-  
-  const newTaskId = Math.max(...project.tasks.map(t => t.id), 0) + 1;
-  const newTask = {
-    id: newTaskId,
-    ...taskData,
-    status: 'pending'
-  };
-  
-  project.tasks.push(newTask);
-  return saveProjects(data) ? newTaskId : null;
-}
-
-// Update task status
-export function updateTaskStatus(projectKey, taskId, status) {
-  const data = loadProjects();
-  const project = data.projects[projectKey];
-  
-  if (!project) {
-    return false;
-  }
-  
-  const task = project.tasks.find(t => t.id === taskId);
-  if (!task) {
-    return false;
-  }
-  
-  task.status = status;
-  return saveProjects(data);
-}
 
 // Get project settings
 export function getSettings() {

@@ -31,7 +31,7 @@ export function generateDarijaResponse(type, context = {}) {
       return `${DARIJA_PHRASES.SUCCESS} ${context.action || ''}`;
     
     case 'loading':
-      return `${DARIJA_PHRASES.LOADING} ${context.task || ''}`;
+      return `${DARIJA_PHRASES.LOADING} ${context.action || ''}`;
     
     case 'thanks':
       return DARIJA_PHRASES.THANKS;
@@ -57,17 +57,6 @@ export function formatProjectStatus(status) {
   return statusMap[status] || 'Unknown';
 }
 
-// Format task status in Darija
-export function formatTaskStatus(status) {
-  const statusMap = {
-    'pending': 'Pending',
-    'in-progress': 'In Progress',
-    'completed': 'Completed',
-    'cancelled': 'Cancelled'
-  };
-  
-  return statusMap[status] || 'Unknown';
-}
 
 // Generate suggestion status indicator
 export function getSuggestionStatusIndicator(status) {
