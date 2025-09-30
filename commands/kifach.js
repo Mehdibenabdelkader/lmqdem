@@ -11,19 +11,19 @@ function generateKifachResponse(project, projectName) {
   const channelMention = `<#${project.channelId}>`;
   const statusEmoji = formatProjectStatus(project.status);
   
-  let response = `📌 **${project.name}**\n`;
-  response += `👤 mol chi: ${managerMention} (${project.manager})\n`;
-  response += `📝 Description: ${project.description}\n`;
-  response += `💬 Channel: ${channelMention}\n`;
-  response += `📊 Status: ${statusEmoji}\n`;
+  let response = `**${project.name}**\n`;
+  response += `mol chi: ${managerMention} (${project.manager})\n`;
+  response += `Description: ${project.description}\n`;
+  response += `Channel: ${channelMention}\n`;
+  response += `Status: ${statusEmoji}\n`;
   
   // Add tasks if any
   if (project.tasks && project.tasks.length > 0) {
-    response += `\n📋 **Tasks (${project.tasks.length}):**\n`;
+    response += `\n**Tasks (${project.tasks.length}):**\n`;
     project.tasks.slice(0, 5).forEach((task, index) => {
-      const taskEmoji = task.status === 'completed' ? '✅' : 
-                       task.status === 'in-progress' ? '🔄' : '⏳';
-      response += `   ${index + 1}. ${taskEmoji} ${task.description}\n`;
+      const taskStatus = task.status === 'completed' ? '[DONE]' : 
+                       task.status === 'in-progress' ? '[IN PROGRESS]' : '[PENDING]';
+      response += `   ${index + 1}. ${taskStatus} ${task.description}\n`;
     });
     if (project.tasks.length > 5) {
       response += `   ... and ${project.tasks.length - 5} more tasks\n`;
@@ -32,11 +32,11 @@ function generateKifachResponse(project, projectName) {
   
   // Add suggestions if any
   if (project.suggestions && project.suggestions.length > 0) {
-    response += `\n💡 **Suggestions (${project.suggestions.length}):**\n`;
+    response += `\n**Suggestions (${project.suggestions.length}):**\n`;
     project.suggestions.slice(0, 3).forEach((suggestion, index) => {
-      const suggestionEmoji = suggestion.status === 'accepted' ? '✅' : 
-                             suggestion.status === 'rejected' ? '❌' : '⏳';
-      response += `   ${index + 1}. ${suggestionEmoji} ${suggestion.text}\n`;
+      const suggestionStatus = suggestion.status === 'accepted' ? '[ACCEPTED]' : 
+                             suggestion.status === 'rejected' ? '[REJECTED]' : '[PENDING]';
+      response += `   ${index + 1}. ${suggestionStatus} ${suggestion.text}\n`;
     });
     if (project.suggestions.length > 3) {
       response += `   ... and ${project.suggestions.length - 3} more suggestions\n`;

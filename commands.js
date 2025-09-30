@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { InstallGlobalCommands } from './utils.js';
 
-// Lm9adem bot commands
+// lmqdem bot commands
 const CHKON_COMMAND = {
   name: 'chkon',
   description: 'Ask who is responsible for a specific topic or project',

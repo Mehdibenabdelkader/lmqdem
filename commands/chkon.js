@@ -10,11 +10,11 @@ function generateChkonResponse(project, keyword) {
   const managerMention = `<@${project.managerId}>`;
   const channelMention = `<#${project.channelId}>`;
   
-  return `🔍 **Chkon li kheddam ela "${keyword}"?**\n\n` +
-         `📌 **${project.name}**\n` +
-         `👤 mol chi: ${managerMention} (${project.manager})\n` +
-         `📝 Description: ${project.description}\n` +
-         `💬 Channel: ${channelMention}\n`;
+  return `**Chkon li kheddam ela "${keyword}"?**\n\n` +
+         `**${project.name}**\n` +
+         `mol chi: ${managerMention} (${project.manager})\n` +
+         `Description: ${project.description}\n` +
+         `Channel: ${channelMention}\n`;
 }
 
 // Main command handler
@@ -25,7 +25,7 @@ export async function handleChkonCommand(interaction) {
     return {
       type: 4, // CHANNEL_MESSAGE_WITH_SOURCE
       data: {
-        content: "❌ dir chi projet Usage: `/chkon [topic]`"
+        content: "dir chi projet Usage: `/chkon [topic]`"
       }
     };
   }

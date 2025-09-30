@@ -1,8 +1,8 @@
-# Lm9adem Discord Bot 🤖
+# lmqdem Discord Bot
 
-**Lm9adem** is a Discord bot inspired by the Moroccan concept of a local representative who helps people and points them to the right person. The bot helps manage projects and coordinate team members in your Discord server.
+**lmqdem** is a Discord bot inspired by the Moroccan concept of a local representative who helps people and points them to the right person. The bot helps manage projects and coordinate team members in your Discord server.
 
-## 🌟 Features
+## Features
 
 ### Phase 1 - Core Features
 - **`/chkon [topic]`** - Ask who is responsible for a specific topic or project
@@ -16,7 +16,7 @@
 - **`/m3lomat`** - FAQ/guide system
 - Weekly project digest
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 discord-example-app/
@@ -24,16 +24,20 @@ discord-example-app/
 ├── commands.js           # Command registration
 ├── commands/             # Modular command handlers
 │   ├── index.js         # Command registry
-│   └── chkon.js         # /chkon command implementation
+│   ├── chkon.js         # /chkon command implementation
+│   ├── lmachari3.js     # /lmachari3 command implementation
+│   ├── kifach.js        # /kifach command implementation
+│   ├── chbanlik.js      # /chbanlik command implementation
+│   └── chkon7na.js      # /chkon7na command implementation
 ├── utils/               # Utility functions
 │   ├── darija.js        # Darija language utilities
 │   └── projects.js      # Project management utilities
 ├── data/                # Data storage
 │   └── projects.json    # Projects database
-└── examples/            # Example implementations
+└── package.json         # Dependencies and scripts
 ```
 
-## 🚀 Setup
+## Setup
 
 ### Prerequisites
 - Node.js 18.x or higher
@@ -68,7 +72,7 @@ discord-example-app/
    npm run dev
    ```
 
-## 📝 Usage
+## Usage
 
 ### Commands
 
@@ -81,13 +85,13 @@ Ask who is responsible for a specific topic or project.
 ```
 **Response:**
 ```
-🔍 Chkon li kaydir "design"?
+Chkon li kaydir "design"?
 
-📌 Design Project
-👤 Manager: @Sarah (Sarah)
-📝 Description: UI/UX design for the new mobile app interface
-💬 Channel: #design-team
-📊 Status: 🟢 Active
+Design Project
+Manager: @Sarah (Sarah)
+Description: UI/UX design for the new mobile app interface
+Channel: #design-team
+Status: Active
 ```
 
 #### `/lmachari3`
@@ -99,13 +103,16 @@ Show detailed information about a specific project.
 #### `/chbanlik [task]`
 Suggest a task or idea for discussion. The suggestion will be posted to the suggestions channel.
 
+#### `/chkon7na`
+Get a brief description of the community and available commands.
+
 #### `/tasks`
 Manage project tasks with subcommands:
 - `add` - Add a new task (managers only)
 - `list` - List tasks for current or specified project
 - `done` - Mark a task as completed (managers only)
 
-## 🔧 Configuration
+## Configuration
 
 ### Projects Data Structure
 Projects are stored in `data/projects.json`. Each project includes:
@@ -121,14 +128,14 @@ Projects are stored in `data/projects.json`. Each project includes:
 - Manager permissions are checked by user ID
 - Anyone can suggest or ask `/chkon`
 
-## 🌍 Localization
+## Localization
 
 The bot uses **Darija** (Moroccan Arabic) for all commands and responses:
-- Commands are in Darija: `/chkon`, `/lmachari3`, `/kifach`, `/chbanlik`, `/tasks`
+- Commands are in Darija: `/chkon`, `/lmachari3`, `/kifach`, `/chbanlik`, `/chkon7na`, `/tasks`
 - Responses mix Darija and English for clarity
 - Friendly and concise communication style
 
-## 🔮 Future Development
+## Future Development
 
 The modular structure makes it easy to add new features:
 1. Create new command files in `commands/`
@@ -136,11 +143,11 @@ The modular structure makes it easy to add new features:
 3. Add command definitions in `commands.js`
 4. Update project data structure as needed
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details.
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -150,4 +157,4 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**Lm9adem** - Helping you find the right person for the right job! 🎯
+**lmqdem** - Helping you find the right person for the right job!

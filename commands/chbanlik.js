@@ -6,7 +6,7 @@ import { DiscordRequest } from '../utils.js';
 function generateChbanlikResponse(task, channelId) {
   const channelMention = `<#${channelId}>`;
   
-  return `✅ **safi sir tan3iyto lik** Check the suggestions channel for discussion.`;
+  return `**safi sir tan3iyto lik** Check the suggestions channel for discussion.`;
 }
 
 // Add suggestion to projects data
@@ -39,8 +39,8 @@ function generateSuggestionMessage(task, user) {
   const userMention = `<@${user.id}>`;
   const username = user.username || 'Unknown User';
   
-  return `💡 **New Suggestion from ${userMention}**\n\n` +
-         `📝 **Task/Idea:** ${task}\n`;
+  return `**New Suggestion from ${userMention}**\n\n` +
+         `**Task/Idea:** ${task}\n`;
 }
 
 // Post message to suggestions channel

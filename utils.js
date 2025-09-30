@@ -36,10 +36,10 @@ export async function InstallGlobalCommands(appId, commands) {
   }
 }
 
-// Simple method that returns a random emoji from list
+// Simple method that returns a random text indicator
 export function getRandomEmoji() {
-  const emojiList = ['😭','😄','😌','🤓','😎','😤','🤖','😶‍🌫️','🌏','📸','💿','👋','🌊','✨'];
-  return emojiList[Math.floor(Math.random() * emojiList.length)];
+  const textList = ['!', ':)', ';)', ':)', ';)', ';)', ';)', ';)', ';)', ';)', ';)', ';)', ';)', ';)'];
+  return textList[Math.floor(Math.random() * textList.length)];
 }
 
 export function capitalize(str) {

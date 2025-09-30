@@ -1,4 +1,4 @@
-// Command registry for Lm9adem bot
+// Command registry for lmqdem bot
 import { handleChkonCommand } from './chkon.js';
 import { handleLmachari3Command } from './lmachari3.js';
 import { handleKifachCommand } from './kifach.js';

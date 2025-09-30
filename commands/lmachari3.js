@@ -4,10 +4,10 @@ import { formatProjectStatus } from '../utils/darija.js';
 // Generate Darija response for listing all projects
 function generateLmachari3Response(projects) {
   if (Object.keys(projects).length === 0) {
-    return `📌 **Lmachari3 li kaynin daba:**\n\n❌ Ma kaynin walou lmachari3 daba. Khassna nzido chi haja!`;
+    return `**Lmachari3 li kaynin daba:**\n\nMa kaynin walou lmachari3 daba. Khassna nzido chi haja!`;
   }
 
-  let response = `📌 **Lmachari3 li kaynin daba:**\n\n`;
+  let response = `**Lmachari3 li kaynin daba:**\n\n`;
   
   let projectCount = 1;
   for (const [projectKey, project] of Object.entries(projects)) {
@@ -19,7 +19,7 @@ function generateLmachari3Response(projects) {
     projectCount++;
   }
   
-  response += `💡 **Tip:** Dir \`/chkon [project]\` bach tshuf chkon li kaydir chi haja specific!`;
+  response += `**Tip:** Dir \`/chkon [project]\` bach tshuf chkon li kaydir chi haja specific!`;
   
   return response;
 }

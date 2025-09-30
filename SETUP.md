@@ -1,11 +1,11 @@
-# Lm9adem Bot Setup Guide
+# lmqdem Bot Setup Guide
 
 ## Quick Start
 
 1. **Create a Discord Application:**
    - Go to https://discord.com/developers/applications
    - Click "New Application"
-   - Give it a name (e.g., "Lm9adem Bot")
+   - Give it a name (e.g., "lmqdem Bot")
    - Go to "Bot" section and create a bot
    - Copy the bot token
 

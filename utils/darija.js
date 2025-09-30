@@ -1,15 +1,15 @@
-// Darija utility functions for Lm9adem bot
+// Darija utility functions for lmqdem bot
 
 // Common Darija phrases and responses
 export const DARIJA_PHRASES = {
-  WELCOME: "Ahlan! m3ak Lmqdem, ach 7eb lkhater",
+  WELCOME: "Ahlan! m3ak lmqdem, ach 7eb lkhater",
   ERROR: "chi haja machi tal lhih, 3awd jereb",
   NO_PERMISSION: "Ma 3andkch lpermission bach tdir hadi. Khassk tkun manager",
   PROJECT_NOT_FOUND: "Ma lqitch had lmchrou3. Checki lmachari3 li kaynin! (/lmachari3) ",
   SUCCESS: "Nadi canadi",
-  LOADING: "daqiqa... ⏳",
+  LOADING: "daqiqa...",
   THANKS: "Lah y7fdek",
-  HELP: "m3ak Lmqdem! kayn man9diw? Dir /lmachari3 bach tshuf kulchi!"
+  HELP: "m3ak lmqdem! kayn man9diw? Dir /lmachari3 bach tshuf kulchi!"
 };
 
 // Generate friendly Darija responses
@@ -47,38 +47,38 @@ export function generateDarijaResponse(type, context = {}) {
 // Format project status in Darija
 export function formatProjectStatus(status) {
   const statusMap = {
-    'active': '🟢 Active',
-    'inactive': '🔴 Inactive',
-    'completed': '✅ Completed',
-    'on-hold': '⏸️ On Hold',
-    'planning': '📋 Planning'
+    'active': 'Active',
+    'inactive': 'Inactive',
+    'completed': 'Completed',
+    'on-hold': 'On Hold',
+    'planning': 'Planning'
   };
   
-  return statusMap[status] || '❓ Unknown';
+  return statusMap[status] || 'Unknown';
 }
 
 // Format task status in Darija
 export function formatTaskStatus(status) {
   const statusMap = {
-    'pending': '⏳ Pending',
-    'in-progress': '🔄 In Progress',
-    'completed': '✅ Completed',
-    'cancelled': '❌ Cancelled'
+    'pending': 'Pending',
+    'in-progress': 'In Progress',
+    'completed': 'Completed',
+    'cancelled': 'Cancelled'
   };
   
-  return statusMap[status] || '❓ Unknown';
+  return statusMap[status] || 'Unknown';
 }
 
-// Generate suggestion status emoji
-export function getSuggestionStatusEmoji(status) {
-  const emojiMap = {
-    'pending': '⏳',
-    'accepted': '✅',
-    'rejected': '❌',
-    'in-progress': '🔄'
+// Generate suggestion status indicator
+export function getSuggestionStatusIndicator(status) {
+  const statusMap = {
+    'pending': '[PENDING]',
+    'accepted': '[ACCEPTED]',
+    'rejected': '[REJECTED]',
+    'in-progress': '[IN PROGRESS]'
   };
   
-  return emojiMap[status] || '❓';
+  return statusMap[status] || '[UNKNOWN]';
 }
 
 // Format date in a friendly way
